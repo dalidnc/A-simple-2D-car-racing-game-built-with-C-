@@ -28,31 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CarRacing));
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
             pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
-            pictureBox6 = new PictureBox();
+            pbLeftBarrier = new PictureBox();
+            pbRightBarrier = new PictureBox();
             pbCar = new PictureBox();
             pictureBox7 = new PictureBox();
             pictureBox8 = new PictureBox();
+            timer1 = new System.Windows.Forms.Timer(components);
+            pbRock = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbLeftBarrier).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbRightBarrier).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbCar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbRock).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.White;
-            pictureBox1.Location = new Point(273, 2);
+            pictureBox1.Location = new Point(273, 7);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(17, 142);
             pictureBox1.TabIndex = 0;
@@ -61,7 +65,7 @@
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.White;
-            pictureBox2.Location = new Point(273, 169);
+            pictureBox2.Location = new Point(273, 164);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(17, 142);
             pictureBox2.TabIndex = 1;
@@ -70,7 +74,7 @@
             // pictureBox3
             // 
             pictureBox3.BackColor = Color.White;
-            pictureBox3.Location = new Point(273, 337);
+            pictureBox3.Location = new Point(273, 330);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(17, 142);
             pictureBox3.TabIndex = 2;
@@ -79,35 +83,35 @@
             // pictureBox4
             // 
             pictureBox4.BackColor = Color.White;
-            pictureBox4.Location = new Point(273, 504);
+            pictureBox4.Location = new Point(273, 499);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(17, 142);
             pictureBox4.TabIndex = 3;
             pictureBox4.TabStop = false;
             // 
-            // pictureBox5
+            // pbLeftBarrier
             // 
-            pictureBox5.BackColor = Color.White;
-            pictureBox5.Location = new Point(1, 1);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(10, 645);
-            pictureBox5.TabIndex = 4;
-            pictureBox5.TabStop = false;
+            pbLeftBarrier.BackColor = Color.White;
+            pbLeftBarrier.Location = new Point(1, 1);
+            pbLeftBarrier.Name = "pbLeftBarrier";
+            pbLeftBarrier.Size = new Size(10, 645);
+            pbLeftBarrier.TabIndex = 4;
+            pbLeftBarrier.TabStop = false;
             // 
-            // pictureBox6
+            // pbRightBarrier
             // 
-            pictureBox6.BackColor = Color.White;
-            pictureBox6.Location = new Point(565, 2);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(10, 644);
-            pictureBox6.TabIndex = 5;
-            pictureBox6.TabStop = false;
+            pbRightBarrier.BackColor = Color.White;
+            pbRightBarrier.Location = new Point(565, 2);
+            pbRightBarrier.Name = "pbRightBarrier";
+            pbRightBarrier.Size = new Size(10, 644);
+            pbRightBarrier.TabIndex = 5;
+            pbRightBarrier.TabStop = false;
             // 
             // pbCar
             // 
             pbCar.BackColor = Color.Transparent;
             pbCar.Image = (Image)resources.GetObject("pbCar.Image");
-            pbCar.Location = new Point(244, 554);
+            pbCar.Location = new Point(246, 554);
             pbCar.Name = "pbCar";
             pbCar.Size = new Size(73, 92);
             pbCar.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -117,7 +121,7 @@
             // pictureBox7
             // 
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(90, 105);
+            pictureBox7.Location = new Point(11, 149);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(74, 58);
             pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -128,12 +132,30 @@
             // 
             pictureBox8.BackColor = Color.Transparent;
             pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(393, 105);
+            pictureBox8.Location = new Point(439, 105);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(61, 58);
             pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox8.TabIndex = 8;
             pictureBox8.TabStop = false;
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Interval = 10;
+            timer1.Tick += timer1_Tick;
+            // 
+            // pbRock
+            // 
+            pbRock.BackColor = Color.Gray;
+            pbRock.Image = (Image)resources.GetObject("pbRock.Image");
+            pbRock.Location = new Point(296, 198);
+            pbRock.Name = "pbRock";
+            pbRock.Size = new Size(125, 62);
+            pbRock.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbRock.TabIndex = 9;
+            pbRock.TabStop = false;
+            pbRock.Click += pbRock_Click;
             // 
             // CarRacing
             // 
@@ -142,11 +164,12 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.Gray;
             ClientSize = new Size(575, 646);
+            Controls.Add(pbRock);
             Controls.Add(pictureBox8);
             Controls.Add(pictureBox7);
             Controls.Add(pbCar);
-            Controls.Add(pictureBox6);
-            Controls.Add(pictureBox5);
+            Controls.Add(pbRightBarrier);
+            Controls.Add(pbLeftBarrier);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
@@ -155,15 +178,18 @@
             Name = "CarRacing";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += CarRacing_Load;
+            KeyDown += CarRacing_KeyDown;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbLeftBarrier).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbRightBarrier).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbCar).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbRock).EndInit();
             ResumeLayout(false);
         }
 
@@ -173,10 +199,12 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox6;
+        private PictureBox pbLeftBarrier;
+        private PictureBox pbRightBarrier;
         private PictureBox pbCar;
         private PictureBox pictureBox7;
         private PictureBox pictureBox8;
+        private System.Windows.Forms.Timer timer1;
+        private PictureBox pbRock;
     }
 }
