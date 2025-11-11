@@ -41,6 +41,7 @@
             pictureBox8 = new PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
             pbRock = new PictureBox();
+            pictureBox5 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -51,6 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbRock).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -121,7 +123,7 @@
             // pictureBox7
             // 
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(11, 149);
+            pictureBox7.Location = new Point(65, 233);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(74, 58);
             pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -132,7 +134,7 @@
             // 
             pictureBox8.BackColor = Color.Transparent;
             pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(439, 105);
+            pictureBox8.Location = new Point(404, 233);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(61, 58);
             pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -147,15 +149,25 @@
             // 
             // pbRock
             // 
-            pbRock.BackColor = Color.Gray;
+            pbRock.BackColor = Color.Transparent;
             pbRock.Image = (Image)resources.GetObject("pbRock.Image");
-            pbRock.Location = new Point(296, 198);
+            pbRock.Location = new Point(78, 1);
             pbRock.Name = "pbRock";
-            pbRock.Size = new Size(125, 62);
+            pbRock.Size = new Size(72, 87);
             pbRock.SizeMode = PictureBoxSizeMode.StretchImage;
             pbRock.TabIndex = 9;
             pbRock.TabStop = false;
             pbRock.Click += pbRock_Click;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(404, 1);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(78, 96);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.TabIndex = 10;
+            pictureBox5.TabStop = false;
             // 
             // CarRacing
             // 
@@ -164,6 +176,7 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.Gray;
             ClientSize = new Size(575, 646);
+            Controls.Add(pictureBox5);
             Controls.Add(pbRock);
             Controls.Add(pictureBox8);
             Controls.Add(pictureBox7);
@@ -190,6 +203,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbRock).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
         }
 
@@ -206,5 +220,6 @@
         private PictureBox pictureBox8;
         private System.Windows.Forms.Timer timer1;
         private PictureBox pbRock;
+        private PictureBox pictureBox5;
     }
 }
